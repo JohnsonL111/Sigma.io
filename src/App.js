@@ -1,5 +1,4 @@
 import './App.css';
-import asm_api from './server/asm_api.js';
 
 function App() {
   return (

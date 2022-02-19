@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import asm_api from './server/asm_api.js';
+import Asm_api from './server/Asm_api';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <Asm_api />
   </React.StrictMode>,
   document.getElementById('root')
 );
