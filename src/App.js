@@ -1,6 +1,8 @@
 import './App.css';
 import { useFilePicker } from 'use-file-picker';
 import axios from 'axios';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const [uploadFile, { filesContent, plainFiles, loading }] = useFilePicker({accept: '.mp3', multiple: false});
@@ -19,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <h1>sum.ai</h1>
       <p>Quickly summarize your lectures into auto generated notes</p>
       <p>Upload File Below</p>
@@ -31,6 +34,8 @@ function App() {
         assembly.post("/upload", data)
                 .then((res) => assembly.post("/transcript", {audio_url: res.data["upload_url"]})
                                        .then((res) => console.log(res.data)))})}
+      <Footer />
+      
     </div>
   );
 }
