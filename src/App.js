@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 var hasUploaded = false;
 
 function downloadTxt(text) {
-  const element = document.createElement("a");
+  const element = document.createElement("tempElement");
   const file = new Blob([text], {type: 'text/plain'});
   element.href = URL.createObjectURL(file);
   element.download = "summary.txt";
@@ -30,7 +30,7 @@ function App() {
   const timer = ms => new Promise(res => setTimeout(res, ms))
 
   useEffect(function() {
-    {plainFiles.forEach(async (file) => {
+    plainFiles.forEach(async (file) => {
       if (!hasUploaded) {
         hasUploaded = true;
         changeDownloadState(true);
@@ -57,7 +57,6 @@ function App() {
                                       })
                 )
       }})
-    }
   }, [uploadFile]);
 
   if (loading) {
