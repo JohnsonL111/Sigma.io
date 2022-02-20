@@ -12,6 +12,7 @@ function downloadTxt(text) {
   element.download = "summary.txt";
   document.body.appendChild(element);
   element.click();
+  document.body.removeChild(element);
 }
 
 function App() {
@@ -61,7 +62,15 @@ function App() {
   }, [uploadFile]);
 
   if (loading) {
-    return (<div>Loading...</div>)
+    return (
+      <div className="App">
+        <h1 className='title'>Sum up the key details.</h1>
+        <p className='text'>Upload an audio or video file to quickly summarize recordings into auto generated notes.</p>
+        <button className="button" disabled={isUploadDisabled} onClick={() => uploadFile()}>Upload File</button>
+        <br />
+        <div>Uploading...</div>
+      </div>
+    );
   }
 
   return (
