@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/stormhacks-2022/static/css/main.cb6bff3d.css",
+    "main.js": "/stormhacks-2022/static/js/main.e5ccb227.js",
+    "static/media/bluewave.svg": "/stormhacks-2022/static/media/bluewave.432c8ac1268dbb7ff60d.svg",
+    "index.html": "/stormhacks-2022/index.html",
+    "static/media/wave3.svg": "/stormhacks-2022/static/media/wave3.bbf729e9ca96664e5dff.svg",
+    "static/media/wave2.svg": "/stormhacks-2022/static/media/wave2.d72ef45b8ff474187f3e.svg",
+    "static/media/wave1.svg": "/stormhacks-2022/static/media/wave1.604e39ead539a59965fb.svg",
+    "main.cb6bff3d.css.map": "/stormhacks-2022/static/css/main.cb6bff3d.css.map",
+    "main.e5ccb227.js.map": "/stormhacks-2022/static/js/main.e5ccb227.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb6bff3d.css",
+    "static/js/main.e5ccb227.js"
+  ]
+}
