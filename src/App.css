@@ -1,6 +1,28 @@
-.App {
+.App{
+    margin:0;
+    padding-top: 20vw;
     text-align: center;
-    padding-top: 10vh;
 }
 
+.title{
+    margin: 4vw;
+}
+
+.button{
+    background-color: #326e86;
+    transition: 0.3s;
+    color: #FEF9EF;
+    border: none;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1vw;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.button:hover{
+    background-color: #102d38;
+}
 
