@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react';
 
 var hasUploaded = false;
 
-function downloadTxt(text) {
+function downloadTxt(text, fileName) {
   const element = document.createElement("a");
   const file = new Blob([text], { type: 'text/plain' });
   element.href = URL.createObjectURL(file);
-  element.download = "summary.txt";
+  element.download = fileName + "_summary.txt";
   document.body.appendChild(element);
   element.click();
   document.body.removeChild(element);
@@ -98,7 +98,7 @@ function App() {
           <br />
           <div key={index}>{file.name}</div>
           <br />
-          <button disabled={isDownloadDisabled} onClick={() => downloadTxt(summary)} className="download_btn">{buttonText}</button>
+          <button disabled={isDownloadDisabled} onClick={() => downloadTxt(summary, file.name)} className="download_btn">{buttonText}</button>
         </div>
       ))}
     </div>
