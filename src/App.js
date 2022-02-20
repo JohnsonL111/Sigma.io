@@ -1,8 +1,6 @@
 import './App.css';
 import { useFilePicker } from 'use-file-picker';
 import axios from 'axios';
-import Header from './components/Header';
-import Footer from './components/Footer';
 
 // function pingAPI(transID) {
 //   const response = await fetch("https://api.assemblyai.com/v2/transcript/" + transID, {"headers": {"authorization": process.env.REACT_APP_API_KEY}});
@@ -31,8 +29,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <h1>sum.ai</h1>
       <p>Quickly summarize your lectures into auto generated notes</p>
       <p>Upload File Below</p>
       <button onClick={() => uploadFile()}>Upload</button>
@@ -43,6 +39,7 @@ function App() {
         const data = await file.arrayBuffer();
         assembly.post("/upload", data)
                 .then((res) => assembly.post("/transcript", {audio_url: res.data["upload_url"]})
+<<<<<<< HEAD
                                        .then(async (res) => {
                                          var completed = false;
                                          while (!completed) {
@@ -56,6 +53,9 @@ function App() {
                                        }))})}
       <Footer />
       
+=======
+                                       .then((res) => console.log(res.data)))})}
+>>>>>>> de5f8d2b246d826f39fa3b9569fbf725c812b7b9
     </div>
   );
 }
