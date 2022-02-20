@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <p>Quickly summarize your lectures into auto generated notes</p>
       <p>Upload File Below</p>
       <button onClick={() => uploadFile()}>Upload</button>
       {filesContent.map((file, index) => (
