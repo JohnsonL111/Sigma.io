@@ -5,7 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   color: #102d38;
-  background-color: #FEF9EF;
+  background-color: #fffcf7;
 }
 
 code {
@@ -19,10 +19,5 @@ footer {
   bottom: 0;
   text-align: center;
   width: 100%;
-  background-color: #D85C61;
-  font-weight: bold;
-}
-
-.upload_text_1, .upload_text_2{
   font-weight: bold;
 }

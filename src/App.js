@@ -66,9 +66,9 @@ function App() {
 
   return (
     <div className="App">
-      <p className="upload_text_1">Quickly summarize your lectures into auto generated notes</p>
-      <p className="upload_text_2">Upload File Below</p>
-      <button disabled={isUploadDisabled} onClick={() => uploadFile()}>Upload</button>
+      <h1 className='title'>Sum up the key details.</h1>
+      <p className='text'>Upload an audio or video file to quickly summarize recordings into auto generated notes.</p>
+      <button className="button" disabled={isUploadDisabled} onClick={() => uploadFile()}>Upload File</button>
       {filesContent.map((file, index) => (
         <div>
           <br />
