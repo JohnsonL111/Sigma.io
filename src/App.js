@@ -92,13 +92,13 @@ function App() {
     <div className="App">
       <h1 className='title'>Sum up the key details.</h1>
       <p className='text'>Upload an audio or video file to quickly summarize recordings into auto generated notes.</p>
-      <button className="button" disabled={isUploadDisabled} onClick={() => uploadFile()}>Upload File</button>
+      <button className="upload_btn" disabled={isUploadDisabled} onClick={() => uploadFile()}>Upload File</button>
       {filesContent.map((file, index) => (
         <div>
           <br />
           <div key={index}>{file.name}</div>
           <br />
-          <button className="button" disabled={isDownloadDisabled} onClick={() => downloadTxt(summary)}>{buttonText}</button>
+          <button disabled={isDownloadDisabled} onClick={() => downloadTxt(summary)} className="download_btn">{buttonText}</button>
         </div>
       ))}
     </div>
