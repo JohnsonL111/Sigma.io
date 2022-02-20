@@ -40,40 +40,35 @@ function App() {
   }
 
   useEffect(function () {
-    {
-      plainFiles.forEach(async (file) => {
-        if (!hasUploaded) {
-          hasUploaded = true;
-          changeDownloadState(true);
-          changeUploadState(true);
-          setDownloadText('Processing...')
-          const data = await file.arrayBuffer();
-          assembly.post("/upload", data)
-            .then((res) => assembly.post("/transcript", { audio_url: res.data["upload_url"], auto_chapters: true})
-              .then(async (res) => {
-                var completed = false;
-                while (!completed) {
-                  assembly.get("/transcript/" + res.data["id"])
-                    .then((res) => {
-                      if (res.data["status"] === "completed") {   
-                        console.log(res.data)
-                        console.log(res.data.chapters)
- 
-                        changeDownloadState(false);
-                        changeUploadState(false);
-                        setDownloadText('Download');
-                        setSummary(getAllSummaries(res.data.chapters));
-                        completed = true;
-                        hasUploaded = false;
-                      }
-                    });
-                  await timer(5000);
-                }
-              })
-            )
-        }
-      })
-    }
+    plainFiles.forEach(async (file) => {
+      if (!hasUploaded) {
+        hasUploaded = true;
+        changeDownloadState(true);
+        changeUploadState(true);
+        setDownloadText('Processing...')
+        const data = await file.arrayBuffer();
+        assembly.post("/upload", data)
+          .then((res) => assembly.post("/transcript", { audio_url: res.data["upload_url"], auto_chapters: true })
+            .then(async (res) => {
+              var completed = false;
+              while (!completed) {
+                assembly.get("/transcript/" + res.data["id"])
+                  .then((res) => {
+                    if (res.data["status"] === "completed") {
+                      changeDownloadState(false);
+                      changeUploadState(false);
+                      setDownloadText('Download');
+                      setSummary(getAllSummaries(res.data.chapters));
+                      completed = true;
+                      hasUploaded = false;
+                    }
+                  });
+                await timer(5000);
+              }
+            })
+          )
+      }
+    })
   }, [uploadFile]);
 
   if (loading) {
