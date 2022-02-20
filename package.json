@@ -1,7 +1,7 @@
 {
   "name": "sum.ai",
-  "homepage":"http://Toastjpg.github.io/stormhacks-2022",
   "version": "0.1.0",
+   "homepage": ".",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
