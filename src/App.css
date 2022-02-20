@@ -8,7 +8,7 @@
     margin: 2vw;
 }
 
-.upload_btn{
+.upload_btn, .download_btn{
     background-color: #326e86;
     transition: 0.3s;
     color: #FEF9EF;
@@ -22,28 +22,11 @@
     border-radius: 20px;
 }
 
-.upload_btn:hover:enabled{
-    background-color: #102d38;
-}
-
-.download_btn{
-    background-color: #326e86;
-    transition: 0.3s;
-    color: #FEF9EF;
-    border: none;
-    padding: 15px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 1vw;
-    cursor: pointer;
-    border-radius: 20px;
-}
-
-.download_btn:hover:enabled{
+.upload_btn:hover:enabled, .download_btn:hover:enabled{
     background-color: #102d38;
 }
 
 .download_btn:disabled, .upload_btn:disabled{
     background-color: gray;
+    pointer-events: none;
 }
