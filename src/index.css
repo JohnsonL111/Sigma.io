@@ -19,4 +19,10 @@ footer {
   bottom: 0;
   text-align: center;
   width: 100%;
+  background-color: #D85C61;
+  font-weight: bold;
+}
+
+.upload_text_1, .upload_text_2{
+  font-weight: bold;
 }
