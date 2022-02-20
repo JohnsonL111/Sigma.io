@@ -1,12 +1,16 @@
 .Header{
     aspect-ratio: 900/600;
-    width:100%;
+    width:100;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url('../../public/layered-header.svg');
+    background-size: contain;
+    background-image: url('../../public/wave.svg');
 }
 
 .Header_Title{
-    margin-left: 5vw;
+    margin: 0;
+    padding-left: 5vw;
+    padding-top: 3vw;
+    font-size: 4vw;
+    
+    color: rgb(38, 46, 66)
 }

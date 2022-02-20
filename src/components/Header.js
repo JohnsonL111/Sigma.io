@@ -4,7 +4,7 @@ import React from 'react'
 function Header() {
   return (
     <div className="Header">
-      <h1 className='Header_Title'>sum.ai</h1>
+      <h1 className='Header_Title'>SigmaAI</h1>
     </div>
   )
 }
