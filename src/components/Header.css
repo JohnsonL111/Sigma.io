@@ -4,9 +4,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url('../../public/layered-header.svg');
+    background-image: url('../../public/wave.svg');
 }
 
 .Header_Title{
-    margin-left: 5vw;
+    margin-left: 3vw;
+    margin-top: 2.5vh;
+    color: white;
 }
