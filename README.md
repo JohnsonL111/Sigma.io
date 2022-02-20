@@ -1,3 +1,11 @@
+# Sigma.io - StormHacks 2022 Hackathon Project
+
+Bootstrapped with create-react-app
+
+## Technologies Used:
+- HTML, CSS, JS, React.js
+- AssemblyAI API
+
 ## Inspiration
 Lecture recordings can sometimes be long and boring. With remote learning especially, we found it very difficult to stay awake and keep focus. We wanted a tool that would auto summarize long lectures and help us absorb information fast without any fluff!
 
