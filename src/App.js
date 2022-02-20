@@ -4,6 +4,16 @@ import axios from 'axios';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+// function pingAPI(transID) {
+//   const response = await fetch("https://api.assemblyai.com/v2/transcript/" + transID, {"headers": {"authorization": process.env.REACT_APP_API_KEY}});
+
+//   if (response["status"] === "completed") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
 function App() {
   const [uploadFile, { filesContent, plainFiles, loading }] = useFilePicker({accept: '.mp3', multiple: false});
   const assembly = axios.create({
@@ -11,9 +21,9 @@ function App() {
     headers: {
       authorization: process.env.REACT_APP_API_KEY,
       "content-type": "application/json",
-      "transfer-encoding": "chunked",
     },
   });
+  const timer = ms => new Promise(res => setTimeout(res, ms))
 
   if (loading) {
     return (<div>Loading...</div>)
@@ -33,7 +43,17 @@ function App() {
         const data = await file.arrayBuffer();
         assembly.post("/upload", data)
                 .then((res) => assembly.post("/transcript", {audio_url: res.data["upload_url"]})
-                                       .then((res) => console.log(res.data)))})}
+                                       .then(async (res) => {
+                                         var completed = false;
+                                         while (!completed) {
+                                           assembly.get("/transcript/" + res.data["id"])
+                                                   .then((res) => {if (res.data["status"] === "completed") {
+                                                     console.log(res.data["text"]);
+                                                     completed = true;
+                                                   }});
+                                            await timer(5000);
+                                         }
+                                       }))})}
       <Footer />
       
     </div>
