@@ -1,8 +1,11 @@
 import './App.css';
 import { useFilePicker } from 'use-file-picker';
 import axios from 'axios';
+import { useState } from 'react';
 
 function App() {
+  const [isButtonDisabled, changeButtonState] = useState(true);
+  const [buttonText, setButtonText] = useState('Processing...');
   const [uploadFile, { filesContent, plainFiles, loading }] = useFilePicker({accept: '.mp3', multiple: false});
   const assembly = axios.create({
     baseURL: "https://api.assemblyai.com/v2",
@@ -23,7 +26,12 @@ function App() {
       <p>Upload File Below</p>
       <button onClick={() => uploadFile()}>Upload</button>
       {filesContent.map((file, index) => (
-        <div key={index}>{file.name}</div>
+        <div>
+          <br />
+          <div key={index}>{file.name}</div>
+          <br />
+          <button disabled={isButtonDisabled}>{buttonText}</button>
+        </div>
       ))}
       {plainFiles.forEach(async (file) => {
         const data = await file.arrayBuffer();
@@ -35,6 +43,8 @@ function App() {
                                            assembly.get("/transcript/" + res.data["id"])
                                                    .then((res) => {if (res.data["status"] === "completed") {
                                                      console.log(res.data["text"]);
+                                                     changeButtonState(false);
+                                                     setButtonText('Download');
                                                      completed = true;
                                                    }});
                                             await timer(5000);
