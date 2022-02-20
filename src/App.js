@@ -34,7 +34,7 @@ function App() {
     var temp = ''
     for (var chapter of data) {
       temp += chapter.summary
-      temp += '\n'
+      temp += '\n\n'
     }
     return temp
   }
@@ -80,7 +80,7 @@ function App() {
     return (
       <div className="App">
         <h1 className='title'>Sum up the key details.</h1>
-        <p className='text'>Upload an audio or video file to quickly summarize recordings into auto generated notes.</p>
+        <p className='text'>Upload an audio or video file to easily summarize recordings into auto generated notes.</p>
         <button className="button" disabled={isUploadDisabled} onClick={() => uploadFile()}>Upload File</button>
         <br />
         <div>Uploading...</div>
@@ -91,7 +91,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='title'>Sum up the key details.</h1>
-      <p className='text'>Upload an audio or video file to quickly summarize recordings into auto generated notes.</p>
+      <p className='text'>Upload an audio or video file to easily summarize recordings into auto generated notes.</p>
       <button className="upload_btn" disabled={isUploadDisabled} onClick={() => uploadFile()}>Upload File</button>
       {filesContent.map((file, index) => (
         <div>

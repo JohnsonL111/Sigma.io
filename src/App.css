@@ -5,7 +5,11 @@
 }
 
 .title{
-    margin: 2vw;
+    margin: 1.5vw;
+    
+}
+.text{
+    font-size: larger;
 }
 
 .upload_btn, .download_btn{
