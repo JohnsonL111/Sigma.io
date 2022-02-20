@@ -1,0 +1,12 @@
+.Header{
+    aspect-ratio: 900/600;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../../public/layered-header.svg');
+}
+
+.Header_Title{
+    margin-left: 5vw;
+}
