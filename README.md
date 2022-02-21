@@ -2,6 +2,13 @@
 
 Bootstrapped with create-react-app
 
+## Landing Page 
+![image](https://user-images.githubusercontent.com/38903775/154912820-849fe227-69a4-419b-bc5b-c286715a34f2.png)
+
+## Video Demo
+https://www.youtube.com/watch?v=9fAU0wKU-hQ
+
+
 ## Technologies Used:
 - HTML, CSS, JS, React.js
 - AssemblyAI API
